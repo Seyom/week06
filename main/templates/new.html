@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <header>BOOK-MARK</header>
+    <br>
+    <div>
+        <button><a href="{% url 'main:show' %}">HOME</a></button>
+    </div>
+</div>
+
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="추가">
+
+    </form>
+</div>
+
+{% endblock %}
